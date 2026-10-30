@@ -1,0 +1,169 @@
+.section-project {
+    padding: 34px clamp(24px, 5.2vw, 76px);
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(0, 1, 2, 0.9) 0%,
+            rgba(7, 10, 15, 0.50) 20%,
+            rgba(7, 10, 15, 0.00) 45%,
+            rgba(7, 10, 15, 0.00) 60%,
+            rgba(7, 10, 15, 0.50) 80%,
+            rgba(0, 0, 0, 0.9) 100%
+        ),
+        url("../image/project-bg2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background-color: var(--background-color);
+    border: 1px solid var(--secondary-color);
+    padding: 40px 24px 24px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.modalimage {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 65vh;
+    object-fit: contain;
+}
+
+.modal-text h2 {
+    margin: 12px 0;
+}
+
+.modal-text p {
+    line-height: 1.7;
+}
+
+.project-label {
+    color: #8987E7;
+    letter-spacing: 2px;
+}
+
+.project-type {
+    color: #8987E7;
+    font-size: 0.9rem;
+}
+
+.tech-tag {
+    border: 1px solid var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--secondary-color);
+    z-index: 2;
+}
+
+.project-card{
+    border: 2px, solid #006eff;
+    border-radius: 20px;
+
+}
+.project-view{
+    margin: 20px;
+}
+
+#project h1{
+    display: flex;
+    align-items: center;
+    font-size: clamp(20px, 2.2  vw, 40px);
+    font-weight: 800;
+    line-height: 0.9;
+    margin-bottom: 20px;
+    
+  
+}
+#project span{
+    margin-left: 7px;
+    color: var(--secondary-color);
+    
+}
+.project-image{
+    width: 100px;
+    height: 200px;
+    margin: auto;
+    margin-top: 100px;
+    
+
+  
+}
+
+#projectCarousel .carousel-indicators {
+  position: static;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+#projectCarousel .carousel-indicators [data-bs-target] {
+  background-color: #8987E7;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+}
+
+.imageview{
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    border: 10px;
+    margin-bottom: 10px;
+    border-radius:  20px 20px 0 0; 
+    
+}
+
+@media (max-width: 767px) {
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        padding: 40px 15px 20px;
+    }
+
+    .modalimage {
+        max-height: 35vh;
+        object-fit: contain;
+    }
+
+    .modal-text h2 {
+        font-size: 1.4rem;
+    }
+}

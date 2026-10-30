@@ -1,0 +1,89 @@
+
+/* about */
+.section-about {
+    padding: 34px clamp(24px, 5.2vw, 76px);
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(0, 1, 2, 0.9) 0%,
+            rgba(7, 10, 15, 0.50) 20%,
+            rgba(7, 10, 15, 0.00) 45%,
+            rgba(7, 10, 15, 0.00) 60%,
+            rgba(7, 10, 15, 0.50) 80%,
+            rgba(0, 0, 0, 0.9) 100%
+        ),
+        url("../image/about-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.section-project {
+  padding: 34px clamp(24px, 5.2vw, 76px);
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#about h1{
+    display: flex;
+    align-items: center;
+    font-size: clamp(20px, 2.2  vw, 40px);
+    font-weight: 800;
+    line-height: 0.9;
+    margin-bottom: 20px;
+    
+  
+}
+.paper-card{
+    padding: clamp(24px, 2vw, 44px);
+    border: 2px solid var(--secondary-color);
+}
+.fact-card{
+    position: relative;
+    min-height: 150px;
+    margin-bottom: 14px;
+    padding: 20px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 4px 4px 0 var(--secondary-color);
+}
+.fact-card strong {
+    display: block;
+    margin-top: 18px;
+    font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+}
+.tiny-label {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    font-weight: 1000;
+    color: var(--blue);
+}
+.neon-card{
+    border: 2px solid var(--secondary-color);
+    padding: clamp(24px, 2vw, 44px);
+}
+
+.about-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about h1 span{
+    color: var(--secondary-color);
+    margin-left: 10px;
+}
+
+@media(max-width: 768px) {
+    .section-about{
+        margin-top: 100px;
+    }
+    
+}
