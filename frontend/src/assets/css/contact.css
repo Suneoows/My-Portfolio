@@ -23,7 +23,8 @@
 }
 .section-contact {
     padding: 34px clamp(24px, 5.2vw, 76px);
-    height: 900px;
+    min-height: 100svh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +43,13 @@
     background-size: cover;
     background-position: center;
 
+}
+
+.form-status {
+    min-height: 1.5em;
+    margin: 12px 0 0;
+    color: #a8d4ff;
+    font-size: .9rem;
 }
 
 /* HEADING */
@@ -86,7 +94,8 @@
 .contact-form-card,
 .contact-info-card {
     position: relative;
-    height: 100%;
+    height: auto;
+    width: 100%;
     min-width: 0;
     padding: clamp(20px, 2.2vw, 32px);
 
@@ -385,8 +394,10 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .section-contact{
-        margin-top: 280px;
+    .section-contact {
+        min-height: 0;
+        height: auto;
+        padding: 56px 18px;
     }
     .contact-section {
         padding: 35px 16px;
@@ -394,12 +405,13 @@
 
     .contact-heading h1 {
         letter-spacing: -1px;
+        font-size: clamp(2.3rem, 10vw, 3.5rem);
     }
 
     .contact-form-card,
     .contact-info-card {
         padding: 22px 16px;
-        margin-bottom: 30px;
+        margin-bottom: 18px;
     }
 
     .contact-detail {

@@ -2,7 +2,8 @@
 /* about */
 .section-about {
     padding: 34px clamp(24px, 5.2vw, 76px);
-    height: 700px;
+    min-height: 100svh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,20 +26,11 @@
 
 .section-project {
   padding: 34px clamp(24px, 5.2vw, 76px);
-  height: 900px;
+  min-height: 100svh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-}
-#about h1{
-    display: flex;
-    align-items: center;
-    font-size: clamp(20px, 2.2  vw, 40px);
-    font-weight: 800;
-    line-height: 0.9;
-    margin-bottom: 20px;
-    
   
 }
 .paper-card{
@@ -75,15 +67,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
-#about h1 span{
-    color: var(--secondary-color);
-    margin-left: 10px;
-}
-
 @media(max-width: 768px) {
-    .section-about{
-        margin-top: 100px;
+    .section-about,
+    .section-project {
+        min-height: 0;
+        padding: 56px 18px;
     }
-    
+
+    .section-about .container-fluid,
+    .section-project .container-fluid {
+        margin-top: 0 !important;
+    }
 }

@@ -1,21 +1,26 @@
 const menuButton = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 const mobileMenu = window.matchMedia("(max-width: 768px)");
-const openmodal = document.getElementById("openModal");
-const mymodal = document.getElementById("myModal");
-const closemodal = document.getElementById("closeModal");
 const navLinks = [...document.querySelectorAll(".nav-menu a[href^='#']")];
 const navSections = navLinks
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
 
+contactForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-openmodal.addEventListener("click" , () => {
-    mymodal.style.display = "flex";
+    const formData = new FormData(contactForm);
+    const subject = encodeURIComponent(formData.get("subject"));
+    const body = encodeURIComponent(
+        `Name: ${formData.get("name")}\nEmail: ${formData.get("email")}\n\n${formData.get("message")}`
+    );
+
+    formStatus.textContent = "Opening your email app with this message ready to send.";
+    window.location.href = `mailto:jgonzales@gmail.com?subject=${subject}&body=${body}`;
 });
-closemodal.addEventListener ("click", ()=>{
-    mymodal.style.display = "none";
-});
+
 
 function setMenuOpen(isOpen) {
     menu.classList.toggle("active", isOpen);
