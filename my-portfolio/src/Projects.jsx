@@ -21,7 +21,11 @@ const projects = [
     type: 'Full-Stack Web Application',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Node.js', 'MySQL'],
     demo: 'https://capstone-teacher-evaluation-git-evalutioncapstone-suneoows.vercel.app/',
-    demoCredentials: { email: 'admin pokess@gmail.com', password: '12345678A' },
+    demoCredentials: [
+      { role: 'Admin', email: 'admin pokess@gmail.com', password: '12345678A' },
+      { role: 'Student', email: 'student@gmail.com', password: '12345678A' },
+      { role: 'Teacher', email: 'teacher@gmail.com', password: '12345678A' },
+    ],
     screenshots: [
       { image: loginImage, title: 'Login Page', description: 'The login page gives teachers and administrators a secure way to access the Teacher Evaluation System.' },
       { image: adminDashboardImage, title: 'Admin Dashboard', description: 'The admin dashboard gives administrators an overview of the system and quick access to evaluation management tools.' },
@@ -110,8 +114,10 @@ function ProjectModal({ project, onClose }) {
               </div>}
               {project.demoCredentials && <div className="mt-3" aria-label="Demo account credentials">
                 <h5>Demo Login</h5>
-                <p className="mb-1"><strong>Email:</strong> {project.demoCredentials.email}</p>
-                <p className="mb-0"><strong>Password:</strong> {project.demoCredentials.password}</p>
+                {project.demoCredentials.map((account) => <p className="mb-2" key={account.role}>
+                  <strong>{account.role}:</strong> {account.email}<br />
+                  <strong>Password:</strong> {account.password}
+                </p>)}
               </div>}
             </div>
           </div>
