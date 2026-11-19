@@ -21,6 +21,7 @@ const projects = [
     type: 'Full-Stack Web Application',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Node.js', 'MySQL'],
     demo: 'https://capstone-teacher-evaluation-git-evalutioncapstone-suneoows.vercel.app/',
+    demoCredentials: { email: 'admin pokess@gmail.com', password: '12345678A' },
     screenshots: [
       { image: loginImage, title: 'Login Page', description: 'The login page gives teachers and administrators a secure way to access the Teacher Evaluation System.' },
       { image: adminDashboardImage, title: 'Admin Dashboard', description: 'The admin dashboard gives administrators an overview of the system and quick access to evaluation management tools.' },
@@ -106,6 +107,11 @@ function ProjectModal({ project, onClose }) {
               {(project.source || project.demo) && <div className="d-flex flex-wrap gap-2 mt-3">
                 {project.source && <a href={project.source} className="btn btn-outline-info">View Source</a>}
                 {project.demo && <a href={project.demo} className="btn btn-info" target="_blank" rel="noreferrer">Live Demo</a>}
+              </div>}
+              {project.demoCredentials && <div className="mt-3" aria-label="Demo account credentials">
+                <h5>Demo Login</h5>
+                <p className="mb-1"><strong>Email:</strong> {project.demoCredentials.email}</p>
+                <p className="mb-0"><strong>Password:</strong> {project.demoCredentials.password}</p>
               </div>}
             </div>
           </div>
